@@ -1,5 +1,11 @@
-### How to run:
+# How to run:
 
-```bash
+```sh
 go run hello.go
+```
+
+# How to test:
+
+```sh
+go test
 ```
