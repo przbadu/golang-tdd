@@ -20,6 +20,14 @@ func TestHello(t *testing.T) {
 	t.Run("in Spanish", func(t *testing.T) {
 		actual := Hello("Elodie", "es")
 		expected := "Hola, Elodie"
+
+		assertCorrectMessage(t, actual, expected)
+	})
+
+	t.Run("in French", func(t *testing.T) {
+		actual := Hello("Harry", "fr")
+		expected := "Bonjour, Harry"
+
 		assertCorrectMessage(t, actual, expected)
 	})
 }
