@@ -30,6 +30,13 @@ func TestHello(t *testing.T) {
 
 		assertCorrectMessage(t, actual, expected)
 	})
+
+	t.Run("in Nepali", func(t *testing.T) {
+		actual := Hello("पुष्प राज", "np")
+		expected := "नमस्ते, पुष्प राज"
+
+		assertCorrectMessage(t, actual, expected)
+	})
 }
 
 func assertCorrectMessage(t testing.TB, actual, expected string) {
