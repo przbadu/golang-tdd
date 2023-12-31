@@ -7,3 +7,9 @@ Go lang only offer `for` loop. You don't get `while`, `do`, `until` keywords lik
 ```sh
 go test -v
 ```
+
+**Or run test with Benchmark**
+
+```sh
+go test -bench=.
+```
