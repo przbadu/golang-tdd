@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 const (
 	spanish            = "es"
@@ -17,18 +19,26 @@ func Hello(name string, lang string) string {
 		name = "World"
 	}
 
-	prefix := englishHelloPrefix // initialize variable
+	return greetingPrefix(lang) + name
+}
 
+// (prefix string): is a named return value
+// this will create a variable called `prefix`
+// default value is 0 for int, "" for string.
+// All you need to do is call `return` at the end of your function.
+func greetingPrefix(lang string) (prefix string) {
 	switch lang {
 	case spanish:
-		prefix = spanishHelloPrefix // assign different value
+		prefix = spanishHelloPrefix
 	case french:
 		prefix = frenchHelloPrefix
 	case nepali:
 		prefix = nepaliHelloPrefix
+	default:
+		prefix = englishHelloPrefix
 	}
 
-	return prefix + name
+	return
 }
 
 func main() {
