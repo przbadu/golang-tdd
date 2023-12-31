@@ -7,17 +7,21 @@ func TestHello(t *testing.T) {
 		actual := Hello("Chris")
 		expected := "Hello, Chris"
 
-		if actual != expected {
-			t.Errorf("Expected %q, Actual: %q", expected, actual)
-		}
+		assertCorrectMessage(t, actual, expected)
 	})
 
 	t.Run("say 'Hello, World' when an empty string is supplied", func(t *testing.T) {
 		actual := Hello("")
 		expected := "Hello, World"
 
-		if actual != expected {
-			t.Errorf("Expected %q, Actual: %q", expected, actual)
-		}
+		assertCorrectMessage(t, actual, expected)
 	})
+}
+
+func assertCorrectMessage(t testing.TB, actual, expected string) {
+	t.Helper()
+
+	if actual != expected {
+		t.Errorf("Expected %q, Actual: %q", expected, actual)
+	}
 }
