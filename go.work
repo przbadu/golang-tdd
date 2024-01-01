@@ -5,3 +5,4 @@ use ./02_tdd_hello_name
 use ./03_integers
 use ./04_iteration
 use ./05_string
+use ./06_array
