@@ -6,20 +6,17 @@ import (
 	"testing"
 )
 
-func TestSum(t *testing.T)  {
-	t.Run("sum of collection of n numbers", func (t *testing.T)  {
-		numbers := []int{1, 2 ,3 ,4 ,5}
+func TestSum(t *testing.T) {
+	numbers := []int{1, 2, 3, 4, 5}
+	got := Sum(numbers)
+	expected := 15
 
-		got := Sum(numbers)
-		expected := 15
-	
-		if got != expected {
-			t.Errorf("Expected %d, got %d, given %v", expected, got, numbers)
-		}	
-	})
+	if got != expected {
+		t.Errorf("Expected %d, got %d, given %v", expected, got, numbers)
+	}
 }
 
-func TestSummAll(t *testing.T) {
+func TestSumAll(t *testing.T) {
 	got := SumAll([]int{1, 2}, []int{0, 9})
 	want := []int{3, 9}
 
@@ -28,15 +25,30 @@ func TestSummAll(t *testing.T) {
 	}
 }
 
+func TestSumAllTails(t *testing.T) {
+	got := SumAllTails([]int{1, 2}, []int{0, 9})
+	want := []int{2, 9}
+
+	if !slices.Equal(got, want) {
+		t.Errorf("got %v expected %v", got, want)
+	}
+}
+
 func ExampleSum() {
-	numbers := []int{5, 10}
-	result := Sum(numbers)
+	result := Sum([]int{5, 10})
 	fmt.Println(result)
 	// Result: 15
 }
 
-func ExampleSumAll()  {
+func ExampleSumAll() {
 	result := SumAll([]int{2, 3}, []int{5, 5})
 	fmt.Println(result)
-	// Output []int{5, 10}
+	// Output {5, 10}
 }
+
+func ExampleSumAllTails() {
+	result := SumAllTails([]int{1, 2}, []int{1, 2, 3, 10})
+	fmt.Println(result)
+	// Output {2, 15}
+}
+
