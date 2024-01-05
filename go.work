@@ -1,8 +1,15 @@
 go 1.21.3
 
 use ./01_hello_world
+
 use ./02_tdd_hello_name
+
 use ./03_integers
+
 use ./04_iteration
+
 use ./05_string
+
 use ./06_array
+
+use ./07-structs
